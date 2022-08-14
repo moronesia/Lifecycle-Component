@@ -1,10 +1,10 @@
-import Form from "./Pembahasan/Materi/index"
+import Index from "./Pembahasan/index"
 
 
 function App() {
   return (
     <div className="App">
-     <Form />
+     <Index />
     </div>
   );
 }
