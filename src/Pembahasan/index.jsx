@@ -31,7 +31,7 @@ export default class Index extends React.Component {
             <div>
                 <div className="container">
                     <div className="head-form">
-                    <Form className="d-flex" onSubmit={this.componentDidMount}>
+                    <Form className="d-flex">
                         <Form.Control onSubmit={this.componentDidMount}
                             type="search"
                             placeholder="Search"
