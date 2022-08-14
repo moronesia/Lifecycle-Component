@@ -24,29 +24,29 @@ export default class Index extends React.Component {
     }
 
 
+
     render() {
         return(
 
             <div>
                 <div className="container">
                     <div className="head-form">
-                    <Form className="d-flex">
-                        <Form.Control
+                    <Form className="d-flex" onSubmit={this.componentDidMount}>
+                        <Form.Control onSubmit={this.componentDidMount}
                             type="search"
                             placeholder="Search"
                             className="me-2"
-                            // value={this.state.getNews}
-                            // onChange={this.componentDidMount}
+                            onChange={this.setState.getNews}
                         />
-                        <Button onClick={this.setState.title}>Search</Button>
+                        <Button type="submit">Search</Button>
                     
                     </Form>
                     </div>
                     <div className="row">
                         {
-                            this.state.getNews.map((row) => {
+                            this.state.getNews.map((row, Index) => {
                                 return(
-                                    <div className="col-3">
+                                    <div className="col-3" key={Index}>
                                         <div className="card" style={{width: "18rem"}}>
                                             <img src={row.urlToImage} className="card-img-top" alt="" />
                                             <div className="card-body">
