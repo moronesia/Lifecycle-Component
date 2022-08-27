@@ -15,10 +15,10 @@ export default class Index extends React.Component {
 
 
     componentDidMount(){
-        Axios.get("https://newsapi.org/v2/top-headlines?country=id&apiKey=f83692ff5fa84daca326087f949d97c4")
+        Axios.get("https://www.omdbapi.com/?s=Batman&apikey=3c3331d6")
         .then(response => {
            this.setState({
-            getNews : response.data.articles
+            getNews : response.data.Search
            })
         }).catch(err => console.log(err)) 
     }
@@ -46,21 +46,12 @@ export default class Index extends React.Component {
                         {
                             this.state.getNews.map((row, Index) => {
                                 return(
-                                    <div className="col-3" key={Index}>
+                                    <div className="col-4" key={Index}>
                                         <div className="card" style={{width: "18rem"}}>
-                                            <img src={row.urlToImage} className="card-img-top" alt="" />
+                                            <img src={row.Poster} className="card-img-top" alt="" />
                                             <div className="card-body">
-                                                <h3 className="card-title">{row.title}</h3>
-                                                <p className="card-text">{row.description}</p>
-                                                <a 
-                                                href={row.url} 
-                                                className="btn btn-primary"
-                                                >
-                                                    Baca Selengkapnya
-                                                </a>
-                                                <hr />
-                                               
-                                                <p className="author">Penulis: {row.author}</p>
+                                                <h3 className="card-title">{row.Title}</h3>
+                                                <p className="author">Penulis: {row.Type}</p>
                                             </div>
                                         </div>
                                     </div>
